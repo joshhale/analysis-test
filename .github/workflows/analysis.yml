@@ -1,9 +1,13 @@
+name: ODASA analysis
+
 on: [push, milestone]
+
 jobs:
   analysis_job:
     runs-on: ubuntu-latest
     name: Analysis job
     steps:
+    - uses: actions/checkout@v1
     - name: Perform analysis
       id: analysis
       uses: joshhale/odasa-action@master
