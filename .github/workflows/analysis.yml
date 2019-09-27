@@ -13,6 +13,8 @@ jobs:
       uses: joshhale/odasa-action@master
       with:
         language: javascript
+        odasa: ${{ secrets.ODASA_URL }}
+        license: ${{ secrets.ODASA_LICENSE }}
     - name: List files
       run: |
         ls -la
