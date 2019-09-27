@@ -1,0 +1,20 @@
+on: [push, milestone]
+jobs:
+  analysis_job:
+    runs-on: ubuntu-latest
+    name: Analysis job
+    steps:
+    - name: Perform analysis
+      id: analysis
+      uses: joshhale/analysis-action@master
+      with:
+        language: javascript
+    - name: List files
+      run: |
+        ls -la
+        ls -la ${{ steps.analysis.outputs.snapshot }}
+    - name: Upload snapshot
+      uses: actions/upload-artifact@master
+      with:
+        name: snapshot
+        path: ${{ steps.analysis.outputs.snapshot }}
