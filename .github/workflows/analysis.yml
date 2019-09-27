@@ -6,7 +6,7 @@ jobs:
     steps:
     - name: Perform analysis
       id: analysis
-      uses: joshhale/analysis-action@master
+      uses: joshhale/odasa-action@master
       with:
         language: javascript
     - name: List files
