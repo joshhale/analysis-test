@@ -8,6 +8,10 @@ jobs:
     name: Analysis job
     steps:
     - uses: actions/checkout@v1
+    - name: Setup source
+      run: |
+        mkdir "$GITHUB_WORKSPACE/source"
+        cp -r src "$GITHUB_WORKSPACE/source"
     - name: Perform analysis
       id: analysis
       uses: joshhale/odasa-action@master
