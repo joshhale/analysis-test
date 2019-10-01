@@ -12,6 +12,8 @@ jobs:
       run: |
         mkdir "$GITHUB_WORKSPACE/source"
         cp -r src "$GITHUB_WORKSPACE/source"
+        cd "$GITHUB_WORKSPACE/source"
+        pwd
     - name: Perform analysis
       id: analysis
       uses: joshhale/odasa-action@master
